@@ -83,14 +83,19 @@
   .side nav { display: flex; gap: 18px; }
   .side nav a { display: flex; align-items: center; gap: 10px; transition: color .2s; }
   .side nav a:hover, .side nav a.active { color: var(--ink); }
-  @media (min-width: 1200px) {
+  @media (min-width: 1280px) {
     .side {
-      position: fixed; top: 0; bottom: 0; z-index: 5; width: 180px;
-      left: calc(50% - 380px - 220px);
-      flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 34px; padding: 82px 0 40px;
+      position: fixed; top: 72px; z-index: 5; width: 200px;
+      left: calc(50% - 380px - 240px);
+      flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 0; padding: 16px;
+      background: var(--bg); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow);
     }
-    .side nav { flex-direction: column; gap: 2px; }
-    .side nav a { padding: 7px 0; }
+    .side .home { padding: 2px 8px 14px; border-bottom: 1px solid var(--line); }
+    .side nav { flex-direction: column; gap: 2px; padding: 10px 0; }
+    .side nav a { padding: 9px 8px; border-radius: 8px; transition: color .2s, background-color .2s; }
+    .side nav a:hover { background: var(--bg-2); }
+    .side nav a.active { background: var(--accent-soft); }
+    .side .tools { padding: 12px 8px 2px; border-top: 1px solid var(--line); }
     .side nav a::before {
       content: ""; width: 14px; height: 1px; background: currentColor; opacity: .45;
       transition: width .4s cubic-bezier(.2,.7,.2,1), opacity .2s, background-color .2s;
@@ -329,7 +334,7 @@
   <aside class="side">
     <a class="home" href="#">paulgregory1.github.io</a>
     <nav aria-label="Sections">
-      <a href="#about">about</a><a href="#experience">experience</a><a href="#publication">publication</a><a href="#building">building</a><a href="#research">research</a><a href="#education">education</a>
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#publication">Publication</a><a href="#building">Building</a><a href="#research">Research</a><a href="#education">Education</a>
     </nav>
     <div class="tools">
       <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">
