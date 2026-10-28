@@ -488,6 +488,12 @@
   <section id="research" class="reveal">
     <div class="label"><span class="n">05</span>Personal research &amp; code projects</div>
     <div class="grid">
+      <div class="card wide">
+        <div class="top"><span class="domain">LLM training · TPU</span></div>
+        <h3>TinyStories GPT in JAX on TPU</h3>
+        <p>I trained a GPT-2-style model (29.7M parameters) from scratch in JAX on TinyStories, with my own 8k-token BPE tokenizer, and split the training across 1 to 8 TPU v5e chips with data parallelism and FSDP. Each strategy is checked against a single device and in the compiled code, then benchmarked for scaling efficiency, MFU and memory per chip.</p>
+        <div class="meta">JAX · Flax NNX · Optax · jax.sharding · TPU v5e</div>
+      </div>
       <a class="card" href="https://github.com/PaulGregory1/erasure-triage" target="_blank" rel="noopener">
         <div class="top"><span class="domain">quantum computing</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
         <h3>ML for quantum error correction</h3>
