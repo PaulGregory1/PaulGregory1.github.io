@@ -503,12 +503,12 @@
     <div class="group">
       <h3 class="group-title">AI Engineering</h3>
       <div class="grid">
-        <a class="card wide" href="https://github.com/PaulGregory1/portfolio-intelligence" target="_blank" rel="noopener">
-          <div class="top"><span class="domain">AI agents · private banking</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
+        <article class="card wide has-detail" data-project="portfolio-intelligence" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Portfolio intelligence agent: details and figures">
+          <div class="top"><span class="domain">AI agents · private banking</span><a class="gh" href="https://github.com/PaulGregory1/portfolio-intelligence" target="_blank" rel="noopener" aria-label="Code on GitHub" title="Code on GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a></div>
           <h3>Portfolio intelligence agent</h3>
           <p>An agent that answers a private banker's questions about client portfolios in French or English: performance, attribution, risk, screening. The LLM never computes a figure: every number comes from a deterministic analytics engine through tool calls, and a grounding check traces each number of the answer back to a tool output. On 102 evaluation questions, it answers 99% correctly with no access violations.</p>
-          <div class="meta">Python · tool calling · MCP · Brinson-Fachler · evals</div>
-        </a>
+          <div class="meta">Python · tool calling · MCP · Brinson-Fachler · evals<span class="more">Details &amp; figures →</span></div>
+        </article>
       </div>
     </div>
     <div class="group">
@@ -546,6 +546,48 @@
       </div>
     </div>
   </section>
+
+  <dialog class="project" id="project-portfolio-intelligence" aria-labelledby="project-portfolio-intelligence-title">
+    <div class="project-head">
+      <div>
+        <span class="domain">AI agents · private banking</span>
+        <h2 id="project-portfolio-intelligence-title">Portfolio intelligence agent</h2>
+      </div>
+      <div class="project-actions">
+        <a class="btn primary" href="https://github.com/PaulGregory1/portfolio-intelligence" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>Code on GitHub</a>
+        <button class="icon-btn project-close" type="button" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+    </div>
+    <div class="project-body">
+      <div class="project-text">
+        <p class="lead">A relationship manager asks about a client portfolio in plain French or English; an LLM agent answers by calling a deterministic analytics engine, and every number in the answer is checked against the tool outputs.</p>
+        <h4>What I built</h4>
+        <ul>
+          <li><b>Analytics engine.</b> A synthetic private-bank book (8 clients, CHF/EUR/USD, 3 years of transactions) with time- and money-weighted returns, Brinson-Fachler attribution, VaR, drawdown and universe screening. No LLM involved, fully tested.</li>
+          <li><b>Agent.</b> A hand-written tool-calling loop over 10 typed tools, with argument validation, loop detection and timeouts. The banker id is injected, not chosen by the model, so it cannot read another banker's clients.</li>
+          <li><b>Grounding check.</b> Every number of the answer must match a tool output within its display precision; otherwise the model gets one correction round and the answer is flagged.</li>
+          <li><b>Evaluation and interface.</b> 102 questions with expected values computed by the engine, and a web interface showing the answer, the tool calls and the check.</li>
+        </ul>
+        <h4>Results</h4>
+        <ul>
+          <li>Nemotron 3 Ultra 550B: <b>99%</b> of questions answered correctly, 99% numerical accuracy.</li>
+          <li>Nemotron 3.5 Lightning 30B: <b>95%</b> correct, and <b>3×</b> faster (8.5 s vs 28.3 s median).</li>
+          <li><b>0</b> access violations for both models: access control holds by construction.</li>
+        </ul>
+        <p class="meta">Python · tool calling · MCP · Brinson-Fachler · evals</p>
+      </div>
+      <div class="project-figs">
+          <figure>
+            <a href="projects/portfolio-intelligence/assistant.jpg" target="_blank" rel="noopener"><img src="projects/portfolio-intelligence/assistant.jpg" alt="Assistant answering an attribution question with key figures and the execution trace" loading="lazy"></a>
+            <figcaption>The assistant explaining a quarter of underperformance: key figures from the tools, the Brinson attribution table, and on the right the tool calls and the grounding check (41 of 41 figures found in tool outputs).</figcaption>
+          </figure>
+          <figure>
+            <a href="projects/portfolio-intelligence/evaluation.jpg" target="_blank" rel="noopener"><img src="projects/portfolio-intelligence/evaluation.jpg" alt="Evaluation of two Nemotron models on 102 questions" loading="lazy"></a>
+            <figcaption>Two open-weight models on the same 102 questions: success rate and median latency by category, and all metrics.</figcaption>
+          </figure>
+      </div>
+    </div>
+  </dialog>
 
   <dialog class="project" id="project-tinystories-jax-tpu" aria-labelledby="project-tinystories-jax-tpu-title">
     <div class="project-head">
