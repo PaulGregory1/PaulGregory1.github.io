@@ -489,12 +489,12 @@
     <div class="group">
       <h3 class="group-title">ML Systems &amp; LLM Training</h3>
       <div class="grid">
-        <div class="card">
-          <div class="top"><span class="domain">LLM training · TPU</span></div>
+        <a class="card" href="https://github.com/PaulGregory1/tinystories-jax-tpu" target="_blank" rel="noopener">
+          <div class="top"><span class="domain">LLM training · TPU</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
           <h3>Trained a GPT in JAX on TPUs</h3>
-          <p>I trained a GPT-2-style model (29.7M parameters) from scratch in JAX on TinyStories, with my own 8k-token BPE tokenizer, and split the training across 1 to 8 TPU v5e chips with data parallelism and FSDP. Each strategy is checked against a single device and in the compiled code, then benchmarked for scaling efficiency, MFU and memory per chip.</p>
+          <p>I trained a GPT-2-style model (29.7M parameters) from scratch in JAX on TinyStories, with my own 8k-token BPE tokenizer, and split the training across 1 to 8 TPU v5e chips with data parallelism and FSDP. Each strategy is checked against a single device and in the compiled code, then benchmarked for scaling efficiency and MFU.</p>
           <div class="meta">JAX · Flax NNX · Optax · jax.sharding · TPU v5e</div>
-        </div>
+        </a>
         <a class="card" href="https://github.com/dynamiqs/dynamiqs" target="_blank" rel="noopener">
           <div class="top"><span class="domain">open source · Alice &amp; Bob</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
           <h3>Differentiable steady-state solver</h3>
