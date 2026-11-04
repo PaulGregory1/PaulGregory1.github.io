@@ -518,13 +518,11 @@
           <div class="top"><span class="domain">quantum computing</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
           <h3>ML for quantum error correction</h3>
           <p>Quantum computers make errors all the time, and software has to correct them fast. I trained a model that spots the rare hard cases and sends only those to a slow, exact corrector, for about 100× fewer errors at almost no extra cost.</p>
-          <div class="meta">Stim · PyMatching · BP+OSD · LightGBM</div>
         </a>
         <a class="card" href="https://github.com/PaulGregory1/surrogate-engineering" target="_blank" rel="noopener">
           <div class="top"><span class="domain">scientific ML</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
           <h3>Surrogate models and AI harness for engineering</h3>
           <p>I built a neural surrogate that replaces a fluid simulation: about 700× faster with ~1% error. I then used it to automatically reshape objects for lower drag, and built an AI harness in which an agent designs a 3D component using CAD and stress-simulation tools.</p>
-          <div class="meta">PyTorch · FNO · diffusion priors · MCP</div>
         </a>
       </div>
     </div>
@@ -535,13 +533,12 @@
           <div class="top"><span class="domain">LLM training · TPU</span><a class="gh" href="https://github.com/PaulGregory1/tinystories-jax-tpu" target="_blank" rel="noopener" aria-label="Code on GitHub" title="Code on GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a></div>
           <h3>Trained a GPT in JAX on TPUs</h3>
           <p>I trained a GPT-2-style model (29.7M parameters) from scratch in JAX on TinyStories, with my own 8k-token BPE tokenizer, and split the training across 1 to 8 TPU v5e chips with data parallelism and FSDP. Each strategy is checked against a single device and in the compiled code, then benchmarked for scaling efficiency and MFU.</p>
-          <div class="meta">JAX · Flax NNX · Optax · jax.sharding · TPU v5e<span class="more">Details &amp; figures →</span></div>
+          <div class="meta"><span class="more">Details &amp; figures →</span></div>
         </article>
         <a class="card" href="https://github.com/dynamiqs/dynamiqs" target="_blank" rel="noopener">
           <div class="top"><span class="domain">open source · Alice &amp; Bob</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
           <h3>Differentiable steady-state solver</h3>
           <p>Preconditioned GMRES solver for large bosonic systems in Dynamiqs: O(n⁶) → O(n³), autodiff-ready, benchmarked on H100 / L40S.</p>
-          <div class="meta">JAX · GPU · Dynamiqs</div>
         </a>
       </div>
     </div>
@@ -645,13 +642,13 @@
         <div class="top"><span class="tag-live"><span class="pulse"></span>live</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
         <h3>ApplyStudio</h3>
         <p>Personal assistant agentic app: it manages your job applications and tailors your CV and cover letters to each offer.</p>
-        <div class="meta"><span class="domain">applystudio.vercel.app</span> · Claude Agent SDK · Electron</div>
+        <div class="meta"><span class="domain">applystudio.vercel.app</span></div>
       </a>
       <a class="card" href="https://dentairemarketplace.com" target="_blank" rel="noopener">
         <div class="top"><span class="tag-live"><span class="pulse"></span>live</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
         <h3>Dentaire MarketPlace</h3>
         <p>Marketplace where dental students buy and sell equipment, instruments and books, filtered by category and university.</p>
-        <div class="meta"><span class="domain">dentairemarketplace.com</span> · Next.js 15 · Supabase</div>
+        <div class="meta"><span class="domain">dentairemarketplace.com</span></div>
       </a>
     </div>
   </section>
